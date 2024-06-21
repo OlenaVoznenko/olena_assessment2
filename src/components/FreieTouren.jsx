@@ -1,6 +1,6 @@
 import React from 'react';
-import touren from './touren';
-import groupen from './groupen';
+import touren from '../data/touren';
+import groupen from '../data/groupen';
 
 const TourenListe = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import touren from './touren';
+import touren from '../data/touren';
 import GroupenC from "./GroupenC";
 
 const TourC = () => {

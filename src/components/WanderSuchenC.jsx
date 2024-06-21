@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import wanderer from './wanderer';
+import wanderer from '../data/wanderer';
 import WanderC from "./WanderC";
 import {Link} from "react-router-dom";
 

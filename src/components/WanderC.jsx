@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import wanderer from './wanderer';
-import touren from './touren';
-import groupen from './groupen';
+import wanderer from '../data/wanderer';
+import touren from '../data/touren';
+import groupen from '../data/groupen';
 
 const WanderC = () => {
     const { id } = useParams();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import wanderer from './wanderer';
+import wanderer from '../data/wanderer';
 
 const WandererC = () => {
     return (

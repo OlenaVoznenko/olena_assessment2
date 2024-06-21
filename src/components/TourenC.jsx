@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import touren from './touren';
+import touren from '../data/touren';
 
 const TourenC = () => (
     <div>

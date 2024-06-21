@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import touren from './touren';
+import touren from '../data/touren';
 
 const AddTourC = () => {
 

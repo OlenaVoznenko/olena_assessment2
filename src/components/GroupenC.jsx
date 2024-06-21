@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import wanderer from './wanderer';
-import groupen from './groupen';
+import wanderer from '../data/wanderer';
+import groupen from '../data/groupen';
 
 const GroupenC = () => {
     const { id } = useParams();
