@@ -28,6 +28,7 @@ const WanderC = () => {
             <p>Telefon: {wd.telefon}</p>
 
             <h2>Teilnehmende Touren</h2>
+
             <ul>
                 {tr.map(tour => (
                     <li key={tour.id}>

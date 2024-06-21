@@ -6,6 +6,8 @@ const TourC = () => {
     const { id } = useParams();
     const tr = touren.find(t => t.id === parseInt(id, 10));
 
+
+
     if (!tr) {
         return <div>Tour nicht gefunden</div>;
     }
