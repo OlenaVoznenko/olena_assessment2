@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import TourC from "./components/TourC";
 import GroupenC from "./components/GroupenC";
 import WanderC from "./components/WanderC";
+import WanderSuchenC from "./components/WanderSuchenC";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                 <li><Link to="/">SrartSeite</Link></li>
                 <li><Link to="/touren">Touren</Link></li>
                 <li><Link to="/wanderer">Wanderer</Link></li>
+                <li><Link to="/wandersuchen">Wanderer suchen</Link></li>
             </ul>
         </nav>
 
@@ -24,6 +26,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/touren" element={<TourenC/>}/>
                 <Route path="/wanderer" element={<WandererC/>}/>
+                <Route path="/wandersuchen" element={<WanderSuchenC/>}/>
 
                 <Route path="/touren/:id" element={<TourC/>}/>
                 <Route path="/wanderer/:id" element={<WanderC/>}/>

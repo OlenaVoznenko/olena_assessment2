@@ -8,9 +8,9 @@ const WandererC = () => {
             <p>Wanderer Liste</p>
 
             <ul>
-                {wanderer.map(t => (
-                    <li key={t.id}>
-                        <Link to={`/wanderer/${t.id}`}>{t.name}</Link>
+                {wanderer.map(w => (
+                    <li key={w.id}>
+                        <Link to={`/wanderer/${w.id}`}>{w.name}</Link>
                     </li>
                 ))}
             </ul>
