@@ -34,6 +34,7 @@ function App() {
                 <Route path="/touren/:id/groupen" element={<GroupenC/>}/>
                 <Route path="/wanderer/:id/touren" element={<WanderC/>}/>
 
+
             </Routes>
         </div>
     </Router>
