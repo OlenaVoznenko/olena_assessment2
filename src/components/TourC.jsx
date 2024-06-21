@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import touren from './touren';
+import GroupenC from "./GroupenC";
 
 const TourC = () => {
     const { id } = useParams();
@@ -21,7 +22,7 @@ const TourC = () => {
             <div><p>Max Teilnehmer: {tr.maxTeilnehmer}</p></div>
             <div><p>Gruppen: {tr.gruppen.join(', ')}</p></div>
 
-            <Link to={`/touren/${id}/groupen`}>Groupen</Link>
+            <GroupenC id = {id}/>
         </div>
     );
 };
