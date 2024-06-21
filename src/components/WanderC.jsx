@@ -2,68 +2,49 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import wanderer from './wanderer';
 import touren from './touren';
+import groupen from './groupen';
 
 const WanderC = () => {
-
     const { id } = useParams();
-    const wd = wanderer.find(w => w.id === parseInt(id, 10));
-    const tr = touren.find(t => t.id === parseInt(id, 10));
+    const wandererId = parseInt(id, 10);
+
+    const wd = wanderer.find(w => w.id === wandererId);
 
     if (!wd) {
         return <div>Wander nicht gefunden</div>;
     }
 
+    const groupeIds = groupen
+        .filter(g => g.wanderid === wandererId)
+        .map(g => g.id);
+
+    const tr = touren.filter(t =>
+        t.gruppen.some(g => groupeIds.includes(g))
+    );
+
     return (
         <div>
-            <p>Wander</p>
+            <h1>{wd.name}</h1>
+            <p>Telefon: {wd.telefon}</p>
 
-            <div>Telefon: {tr.name}</div>
-
-
-
-
-            <Link to={`/wanderer/${id}/touren`}>Wanderstouren</Link>
-
+            <h2>Teilnehmende Touren</h2>
+            <ul>
+                {tr.map(tour => (
+                    <li key={tour.id}>
+                        <Link to={`/touren/${tour.id}`}>{tour.name}</Link>
+                        <ul>
+                            <li>Datum: {tour.datum}</li>
+                            <li>Sehenswürdigkeiten: {tour.sehenswürdigkeiten.join(', ')}</li>
+                            <li>Max Teilnehmer: {tour.maxTeilnehmer}</li>
+                            <li>
+                                Gruppen: {tour.gruppen.filter(g => groupeIds.includes(g)).join(', ')}
+                            </li>
+                        </ul>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
 
 export default WanderC;
-
-/*
-
-            <div>Tour: {tr.name}</div>
-            <div>Datum: {tr.datum}</div>
-            <div><p>Gruppen: {tr.gruppen.join(', ')}</p></div>
- */
-/*
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import touren from './touren';
-
-const TourC = () => {
-    const { id } = useParams();
-    const tr = touren.find(t => t.id === parseInt(id, 10));
-
-    if (!tr) {
-        return <div>Tour nicht gefunden</div>;
-    }
-
-    return (
-        <div>
-            <p>Tour</p>
-            <h2>😼 {tr.name} 😼</h2>
-            <div>{tr.datum}</div>
-            <div><p>Sehenswürdigkeiten: {tr.sehenswürdigkeiten.join(', ')}</p></div>
-            <div><p>Max Teilnehmer: {tr.maxTeilnehmer}</p></div>
-            <div><p>Gruppen: {tr.gruppen.join(', ')}</p></div>
-
-            <Link to={`/touren/${id}/groupen`}>Groupen</Link>
-        </div>
-    );
-};
-
-export default TourC;
-
-
- */

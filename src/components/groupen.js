@@ -7,7 +7,8 @@ const groupen = [
     {id: 3, wanderid: 6},
     {id: 4, wanderid: 7},
     {id: 4, wanderid: 8},
-    {id: 5, wanderid: 9}
+    {id: 5, wanderid: 9},
+    {id: 5, wanderid: 1}
 ];
 
 export default groupen;
