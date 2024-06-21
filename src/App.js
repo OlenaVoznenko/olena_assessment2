@@ -8,6 +8,7 @@ import GroupenC from "./components/GroupenC";
 import WanderC from "./components/WanderC";
 import WanderSuchenC from "./components/WanderSuchenC";
 import AddTourC from "./components/AddTourC";
+import FreieTouren from "./components/FreieTouren";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
                 <li><Link to="/">SrartSeite</Link></li>
                 <li><Link to="/touren">Touren</Link></li>
                 <li><Link to="/tourenadd">Touren addieren</Link></li>
+                <li><Link to="/freietouren">Nicht asugebuchte Touren</Link></li>
                 <li><Link to="/wanderer">Wanderer</Link></li>
                 <li><Link to="/wandersuchen">Wanderer suchen</Link></li>
             </ul>
@@ -28,6 +30,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/touren" element={<TourenC/>}/>
                 <Route path="/tourenadd" element={<AddTourC/>}/>
+                <Route path="/freietouren" element={<FreieTouren/>}/>
                 <Route path="/wanderer" element={<WandererC/>}/>
                 <Route path="/wandersuchen" element={<WanderSuchenC/>}/>
 
